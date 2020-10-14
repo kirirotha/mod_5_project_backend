@@ -10,16 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_07_205428) do
+ActiveRecord::Schema.define(version: 2020_10_13_203839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "trips", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "start_date"
+    t.bigint "user_id", null: false
+    t.boolean "is_public"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_trips_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.integer "zip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "visits", force: :cascade do |t|
+    t.bigint "trip_id", null: false
+    t.string "location_name"
+    t.string "description"
+    t.string "phone"
+    t.boolean "reservable"
+    t.string "email"
+    t.decimal "latitude", precision: 10, scale: 7
+    t.decimal "longitude", precision: 10, scale: 7
+    t.datetime "date_visited"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["trip_id"], name: "index_visits_on_trip_id"
+  end
+
+  add_foreign_key "trips", "users"
+  add_foreign_key "visits", "trips"
 end
