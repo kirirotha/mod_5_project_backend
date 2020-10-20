@@ -9,7 +9,7 @@ Visit.destroy_all
 Trip.destroy_all
 User.destroy_all
 
-u1 = User.create(username: 'Levi', password: 'aaa', street: '2419 Flowering Brook Lane', city: 'Sugar Land', state: 'TX', zip: '77479')
+u1 = User.create(username: 'Levi', password: 'aaa', street: '2419 Flowering Brook Lane', city: 'Sugar Land', state: 'TX', zip: '77479', home_latitude: 29.567762, home_longitude: -95.673661)
 
 t1 = Trip.create(user_id: u1.id, title: 'Santa Fe to Boulder', description: 'This was a trip from Santa Fe, New Mexico to Boulder, Colorado', is_public: true, start_date: DateTime.now)
 

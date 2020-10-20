@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         payload = {user_id: @user.id}
         token = JWT.encode(payload,'SUPER_SECRET_KEY', 'HS256')
         if @user.valid?
-        render json: { auth_key: token }, status: :created
+        render json: { auth_key: token, user_id: @user.id, home_latitude: @user.home_latitude, home_longitude: @user.home_longitude }, status: :created
         else
         render json: { error: 'failed to create user' }, status: :not_acceptable
         end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :password, :street, :city, :state, :zip)
+        params.require(:user).permit(:username, :password, :street, :city, :state, :zip, :home_latitude, :home_longitude)
     end
 
     def find_user

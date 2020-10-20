@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2020_10_13_203839) do
     t.string "city"
     t.string "state"
     t.integer "zip"
+    t.decimal "home_latitude", precision: 10, scale: 7
+    t.decimal "home_longitude", precision: 10, scale: 7
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
