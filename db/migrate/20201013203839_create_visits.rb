@@ -7,6 +7,7 @@ class CreateVisits < ActiveRecord::Migration[6.0]
       t.string :phone
       t.boolean :reservable
       t.string :email
+      t.integer :stop_number
       t.decimal :latitude, :precision => 10, :scale =>7
       t.decimal :longitude, :precision => 10, :scale => 7
       t.datetime :date_visited

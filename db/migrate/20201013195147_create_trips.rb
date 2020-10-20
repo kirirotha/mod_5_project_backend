@@ -3,6 +3,7 @@ class CreateTrips < ActiveRecord::Migration[6.0]
     create_table :trips do |t|
       t.string :title
       t.string :description
+      t.string :route
       t.datetime :start_date
       t.references :user, null: false, foreign_key: true
       t.boolean :is_public

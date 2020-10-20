@@ -27,7 +27,7 @@ class VisitsController < ApplicationController
     def update
         @visit.update(visit_params)
         @visit.save
-        render json: @visit, status: :updated
+        render json: @visit, status: :accepted
     end
 
     def destroy
@@ -38,7 +38,7 @@ class VisitsController < ApplicationController
     private
 
     def visit_params
-        params.require(:visit).permit(:id, :trip_id, :location_name, :latitude, :longitude, :date_visited, :description, :phone, :reservable, :email)
+        params.require(:visit).permit(:id, :trip_id, :location_name, :latitude, :longitude, :date_visited, :description, :phone, :reservable, :email, :stop_number)
     end
 
     def find_visit

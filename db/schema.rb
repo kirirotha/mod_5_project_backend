@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_203839) do
   create_table "trips", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.string "route"
     t.datetime "start_date"
     t.bigint "user_id", null: false
     t.boolean "is_public"
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_203839) do
     t.string "phone"
     t.boolean "reservable"
     t.string "email"
+    t.integer "stop_number"
     t.decimal "latitude", precision: 10, scale: 7
     t.decimal "longitude", precision: 10, scale: 7
     t.datetime "date_visited"

@@ -27,7 +27,7 @@ class TripsController < ApplicationController
     def update
         @trip.update(trip_params)
         @trip.save
-        render json: @trip, status: :updated
+        render json: @trip, status: :accepted
     end
 
     def destroy
@@ -38,7 +38,7 @@ class TripsController < ApplicationController
     private
 
     def trip_params
-        params.require(:trip).permit(:id, :user_id, :title, :description, :start_date, :is_public)
+        params.require(:trip).permit(:id, :user_id, :title, :description, :start_date, :is_public, :route)
     end
 
     def find_trip
