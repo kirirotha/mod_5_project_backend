@@ -22,7 +22,9 @@ class UsersController < ApplicationController
     end
 
     def update
-
+        @user.update(user_params)
+        @user.save
+        render json: @user, status: :accepted
     end
 
     private
