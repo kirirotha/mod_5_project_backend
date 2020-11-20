@@ -1,24 +1,7 @@
-# README
+<div align="left">
+      <a href="https://youtu.be/gLrrX8T-_j8">
+         <img src="https://img.youtube.com/vi/gLrrX8T-_j8/0.jpg" style="width:560; height:315">
+      </a>
+</div>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Projekt Camp](https://youtu.be/gLrrX8T-_j8)
